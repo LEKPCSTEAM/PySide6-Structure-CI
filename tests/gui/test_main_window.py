@@ -1,4 +1,3 @@
-import pytest
 from PySide6.QtCore import Qt
 from app.ui.main_window import MainWindow
 

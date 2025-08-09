@@ -6,7 +6,8 @@ def _card(title: str) -> QFrame:
     f.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
     lay = QGridLayout(f)
     lay.setContentsMargins(16, 16, 16, 16)
-    t = QLabel(title); t.setObjectName("CardTitle")
+    t = QLabel(title)
+    t.setObjectName("CardTitle")
     t.setWordWrap(True)
     lay.addWidget(t, 0, 0)
     return f
