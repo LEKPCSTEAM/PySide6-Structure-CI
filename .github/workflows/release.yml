@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: uv python install 3.11 --default
+      - run: uv sync --all-extras --dev
+      - run: uv run pyinstaller app.spec
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-build
+          path: dist/**
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: uv python install 3.11 --default
+      - run: uv sync --all-extras --dev
+      - run: uv run pyinstaller app.spec
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: dist/**
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: uv python install 3.11 --default
+      - run: uv sync --all-extras --dev
+      - run: uv run pyinstaller app.spec
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-build
+          path: dist/**
+
+  release:
+    needs: [build-linux, build-windows, build-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

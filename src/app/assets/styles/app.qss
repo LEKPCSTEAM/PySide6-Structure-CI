@@ -1,0 +1,18 @@
+* { font-family: "Noto Sans", "Inter", "Segoe UI", sans-serif; }
+
+#HeaderTitle { font-size: 20px; font-weight: 700; }
+
+QPushButton#SideNavButton {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+QPushButton#SideNavButton:hover { background: rgba(0,0,0,0.05); }
+
+QFrame#Card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+#CardTitle { font-size: 16px; font-weight: 600; }

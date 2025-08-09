@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install Python 3.11 via uv
+        run: uv python install 3.11 --default
+
+      - name: Install system deps for Qt headless
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libxkbcommon-x11-0
+
+      - name: Sync deps (prod + dev)
+        run: uv sync --all-extras --dev
+
+      - name: Lint (ruff)
+        run: uv run ruff check .
+
+      - name: Format check (black)
+        run: uv run black --check .
+
+      - name: Type check (mypy)
+        run: uv run mypy src
+
+      - name: Run tests (pytest-qt)
+        run: xvfb-run -a uv run pytest

@@ -1,0 +1,40 @@
+[project]
+name = "pyside6-structure"
+version = "0.1.0"
+description = "structure-grade PySide6 app with responsive UI, tests, CI, and release builds via uv + PyInstaller."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.11.7",
+  "PySide6>=6.7",
+  "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-qt",
+  "ruff",
+  "black",
+  "mypy",
+  "pyinstaller",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+exclude = ["tests/"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+qt_api = "pyside6"

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.spec
+.venv/
+.env
+.env.*
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# uv
+.uv/
+uv.lock
