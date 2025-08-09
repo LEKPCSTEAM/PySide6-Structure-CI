@@ -1,7 +1,7 @@
 """Download Inter and Noto Sans (OFL) into assets/fonts.
 This script avoids bundling font binaries directly in the template.
 """
-import os, sys, pathlib, urllib.request
+import pathlib, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]  # project root
 fonts_dir = ROOT / "src" / "app" / "assets" / "fonts"
