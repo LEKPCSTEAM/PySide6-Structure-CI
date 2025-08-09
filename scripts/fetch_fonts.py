@@ -1,6 +1,7 @@
 """Download Inter and Noto Sans (OFL) into assets/fonts.
 This script avoids bundling font binaries directly in the template.
 """
+
 import pathlib
 import urllib.request
 

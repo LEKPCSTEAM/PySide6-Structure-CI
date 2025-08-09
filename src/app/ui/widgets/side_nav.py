@@ -1,6 +1,7 @@
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSizePolicy
 
+
 class SideNav(QWidget):
     item_clicked = Signal(int)
 

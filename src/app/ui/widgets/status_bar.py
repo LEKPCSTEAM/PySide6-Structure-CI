@@ -1,6 +1,7 @@
 from PySide6.QtCore import Qt, QTimer, QTime
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel
 
+
 class StatusBar(QWidget):
     def __init__(self):
         super().__init__()

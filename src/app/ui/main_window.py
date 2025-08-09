@@ -1,13 +1,19 @@
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QStackedWidget,
-    QSplitter, QSizePolicy
+    QMainWindow,
+    QWidget,
+    QHBoxLayout,
+    QVBoxLayout,
+    QStackedWidget,
+    QSplitter,
+    QSizePolicy,
 )
 from app.ui.widgets.header_bar import HeaderBar
 from app.ui.widgets.side_nav import SideNav
 from app.ui.widgets.status_bar import StatusBar
 from app.ui.pages.dashboard_page import DashboardPage
 from app.ui.pages.settings_page import SettingsPage
+
 
 class MainWindow(QMainWindow):
     def __init__(self):

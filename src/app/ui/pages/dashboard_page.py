@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QWidget, QGridLayout, QLabel, QFrame, QSizePolicy
 
+
 def _card(title: str) -> QFrame:
     f = QFrame()
     f.setObjectName("Card")
@@ -11,6 +12,7 @@ def _card(title: str) -> QFrame:
     t.setWordWrap(True)
     lay.addWidget(t, 0, 0)
     return f
+
 
 class DashboardPage(QWidget):
     def __init__(self):

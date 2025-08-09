@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QWidget, QFormLayout, QLineEdit, QCheckBox
 
+
 class SettingsPage(QWidget):
     def __init__(self):
         super().__init__()

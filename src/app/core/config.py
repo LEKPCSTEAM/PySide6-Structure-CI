@@ -11,8 +11,10 @@ ICONS = ASSETS / "icons"
 
 load_dotenv()
 
+
 class Settings(BaseModel):
     app_title: str = os.getenv("APP_TITLE", "structure Ui UI")
     theme_file: str = os.getenv("THEME_FILE", str(STYLES / "app.qss"))
+
 
 settings = Settings()

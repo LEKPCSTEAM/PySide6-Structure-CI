@@ -6,6 +6,7 @@ from app.ui.main_window import MainWindow
 from app.core.theme import load_qss
 from app.core.config import settings
 
+
 def main():
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
@@ -23,6 +24,7 @@ def main():
     win.resize(1280, 800)
     win.show()
     sys.exit(app.exec())
+
 
 if __name__ == "__main__":
     main()

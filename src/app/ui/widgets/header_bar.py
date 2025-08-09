@@ -1,6 +1,7 @@
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QPushButton, QSizePolicy
 
+
 class HeaderBar(QWidget):
     def __init__(self, title: str):
         super().__init__()

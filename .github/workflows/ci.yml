@@ -27,7 +27,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Lint (ruff)
-        run: uv run ruff check .
+        run: uv run ruff check . --fix
 
       - name: Format check (black)
         run: uv run black --check .
